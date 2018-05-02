@@ -33,6 +33,158 @@
         System.import('app').catch(function (err) {
             console.error(err);
         });
+        
+        //from chatRoom
+        //initiating resquest to server to make connection to server client side
+            var socket = io.connect('https://kaitlinclark-xx3.github.io/chat');
+            //////////////////////////////////////
+            /////CLIENT CONNECTED TO NAMESPACE////
+            /////////////////////////////////////
+            socket.on('connect', function(){
+               //username = prompt("Please enter your name.");
+                console.log('connected to server');
+            });
+            socket.on('disconnect', function(){
+                console.log('disconnected from server');    
+            });
+            
+            ////////////////////////
+            //////MAIN PAGE////////
+            ///////////////////////
+               /////////////////////////
+               /////entering username///
+               /////////////////////////
+            $('#new_user').on('submit', function(event){
+               event.preventDefault();
+               
+               var username =  $('[name=name]').val();
+               if(username ===''){
+                  console.log('please enter a valid username');
+               }
+               else{
+                  socket.emit('user_joined', {username: username});
+                  
+                  socket.emit('get_chats', {username: username});
+                  console.log('username sent to server');
+                  //hide username input form
+                  $('#new_user').attr('style', 'display:none');
+                  //show create room form
+                  $('#new_room').attr('style', 'display: block');
+                  
+               }
+            });
+               ////////////////////////////
+               /////////DISPLAY CHATS//////
+               ////////////////////////////
+               socket.on('update_rooms', function(roomsArray){
+                  console.log('rooms list: ',roomsArray);
+                  var output = $('<div></div>');
+                roomsArray.forEach(function(r){
+                  var text = document.createTextNode(r.room);
+                    output.append('<hr>').append(text);
+                });
+                
+                $('#chats').html(output);
+                  });
+                //////////////////////////
+                ////creating new room/////
+                /////////////////////////
+            $('#new_room').on('submit', function(event){
+                event.preventDefault();
+                var room = $('[name=room]').val();
+                var stat = $('input[name=stat]:checked').val();
+                
+                if(room ==='' || stat === ''){
+                    console.log('please enter valid values for room name. Choose public or private chat');
+                }
+                else{
+                     if(stat === "Public"){
+                        socket.emit('join_room',
+                            {
+                                roomname: room,
+                                public_stat: true,
+                                password: ''
+                              });
+                     }
+                     else{
+                        var pass = prompt('Please set a password');
+                        if((pass==='')){
+                           prompt('unable to make chat because password not set');
+                        }
+                        else{
+                           socket.emit('join_room',
+                            {
+                                roomname: room,
+                                public_stat: false,
+                                password: pass
+                                });
+                        }
+                        
+                     }
+                    
+                    console.log('request to join room '+room+' sent to server');
+                    //dispaly current users
+                    $('.user_panel').attr('style', 'display:block;');
+                    //display chat form
+                    $('.chat_window').attr('style', 'display:block;');
+                    //hide input for username
+                    $('#new_room').attr('style', 'display:none;');
+                    //hide avail chats
+                    $('#chats').attr('style', 'display:none;');
+                    $('<h1>').show();
+                }
+                
+                //reset form for joining a room
+                $('[name=name]').val('');
+                $('[name=room]').val('');
+                
+                
+            });
+            //////////////////////////////
+            /////////IN CHAT ROOM////////
+            /////////////////////////////
+                ////////////////////////////
+                ///update list of users////
+                ////////////////////////////
+            socket.on('update_users', function(usersArray){
+               console.log('users list: ',usersArray);
+               var output = $('<div></div>');
+                usersArray.forEach(function(u){
+                  var text = document.createTextNode(u.username);
+                    output.append('<hr>').append(text);
+                });
+                
+                $('#users').html(output);
+            });
+               ////////////////////////////////////
+                ///////sending message in chat/////
+                ////////////////////////////////////
+            $('#chat-input').on('submit', function(event){
+                  event.preventDefault();
+                
+                  socket.emit('create_new_message',
+                            {
+                                text: $('[name=message]').val()
+                                });
+                  $('[name=message]').val('');
+               });
+               ////////////////////////////////////////
+                ////////sending message in namespace////
+                ////////////////////////////////////////
+            //message sent from server and displayed to ALL CLIENTS
+            socket.on('added_new_message', function(message){
+                console.log('new message', message);
+               
+               $("#chatlog").append('<hr>');
+               var output = document.createTextNode(message.from+' says: '+message.text);
+               
+               $('#chatlog').append(output);
+            });
+            
+            socket.on('getPass', function(){
+               var pass = prompt('Please enter the password for this chat room');
+               socket.emit('gotPass', {password: pass});
+            });
     </script>
 </head>
 
