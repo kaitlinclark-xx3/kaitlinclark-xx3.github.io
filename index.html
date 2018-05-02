@@ -1,155 +1,147 @@
 <!DOCTYPE html>
 <html>
    <head>
-    <title>AFAS Site</title>
+      <title>AFAS Site</title>
+      
+      <!--META TAGS-->
+      <meta charset="utf-8">
+      <!--latest rendering engine-->
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--set page width to size of device and set zoom-->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
     
-    <!--META TAGS-->
-    <meta charset="utf-8">
-    <!--latest rendering engine-->
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <!--set page width to size of device and set zoom-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!--BOOTSTRAP CSS-->
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <style>
+      <!--BOOTSTRAP CSS-->
+      <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <style>
         .row{
             background-color: #993300;
         }
         .slide1{
-  background-image: url('https://image.freepik.com/free-vector/blue-geometric-technological-background_1055-1907.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.slide2{
-  background-image: url('https://image.freepik.com/free-vector/modern-technological-elements-with-transparent-background_1035-7108.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.slide3{
-  background-image: url('https://image.freepik.com/free-psd/abstract-background-design_1297-73.jpg');
-  height: 500px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-.carousel-caption h1{
-  font-size: 5.4em;
-  font-family: 'Pacifico', cursive;
-  padding-bottom: .4em;
-}
-.carousel-caption p{
-  font-size: 2em;
-}
-    </style>
+            background-image: url('https://image.freepik.com/free-vector/blue-geometric-technological-background_1055-1907.jpg');
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+         }
+         .slide2{
+            background-image: url('https://image.freepik.com/free-vector/modern-technological-elements-with-transparent-background_1035-7108.jpg');
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+         }
+         .slide3{
+            background-image: url('https://image.freepik.com/free-psd/abstract-background-design_1297-73.jpg');
+            height: 500px;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+         }
+         .carousel-caption h1{
+           font-size: 5.4em;
+           font-family: 'Pacifico', cursive;
+           padding-bottom: .4em;
+         }
+         .carousel-caption p{
+           font-size: 2em;
+         }
+      </style>
    </head>
    <body>
-        <!-- adds jquery-->
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <!--bootstrap JS-->
-        <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <!-- adds jquery-->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+      <!--bootstrap JS-->
+      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
         
-        <!--site header-->
-        <div class="container">
-            <div class="page-header">
-                <h1>Final Project</h1>
+      <!--site header-->
+      <div class="container">
+         <div class="page-header">
+            <h1>Final Project</h1>
+         </div>
+         <!--NAVIGATION BAR -->
+         <nav class="navbar navbar-default">
+            <div class="container-fluid">
+ 
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+ 
+               <!-- Button that toggles the navbar on and off on small screens -->
+               <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+ 
+                  <!-- Hides information from screen readers -->
+                  <span class="sr-only"></span>
+ 
+                  <!-- Draws 3 bars in navbar button when in small mode -->
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+               </button>
+ 
+               <!-- You'll have to add padding in your image on the top and right of a few pixels (CSS Styling will break the navbar) -->
+               <a class="pull-left" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRtxFfjBhCcmm1DsVQtx64lNMj12e1wxxOa5OmqviES9za0bPBw"></a>
             </div>
-            <!-- .navbar-fixed-top, or .navbar-fixed-bottom can be added to keep the nav bar fixed on the screen -->
-<nav class="navbar navbar-default">
-  <div class="container-fluid">
  
-    <!-- Brand and toggle get grouped for better mobile display -->
-    <div class="navbar-header">
- 
-      <!-- Button that toggles the navbar on and off on small screens -->
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
- 
-      <!-- Hides information from screen readers -->
-        <span class="sr-only"></span>
- 
-        <!-- Draws 3 bars in navbar button when in small mode -->
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
- 
-      <!-- You'll have to add padding in your image on the top and right of a few pixels (CSS Styling will break the navbar) -->
-      <a class="pull-left" href="#"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwRtxFfjBhCcmm1DsVQtx64lNMj12e1wxxOa5OmqviES9za0bPBw"></a>
-    </div>
- 
-    <!-- Collect the nav links, forms, and other content for toggling -->
-    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
-        <li><a href="#">About</a></li>
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Phone</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Set Appointment</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-</nav>
-            <!--carousel of quotes-->
-            <div id="quoteCarousel" class="carousel slide" data-ride="carousel">
-                <ol class="carousel-indicators">
-                    <li data-target="#quoteCarousel" data-slide-to="0" class="active"></li>
-                    <li data-target="#quoteCarousel" data-slide-to="1"> </li>
-                    <li data-target="#quoteCarousel" data-slide-to="2"> </li>
-                </ol>
-                <div class="carousel-inner">
-                    <div class="item active">
-                        <div class="slide1"></div>
-                        <div class="carousel-caption">
-                            <h1>Text of quote1</h1>
-                            <p>~Author and book/publication info</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="slide2"></div>
-                        <div class="carousel-caption">
-                            <h1>Text of quote2</h1>
-                            <p>~Author and book/publication info</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="slide3"></div>
-                        <div class="carousel-caption">
-                            <h1>Text of quote3</h1>
-                            <p>~Author and book/publication info</p>
-                        </div>
-                    </div>
-                </div>
-                <a class="left carousel-control" href="#quoteCarousel" data-slide="prev">
-                    <span class="glyphicon glyphicon-chevron-left"></span>
-                </a>
-                <a class="right carousel-control" href="#quoteCarousel" data-slide="next">
-                    <span class="glyphicon glyphicon-chevron-right"></span>
-                </a>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               <ul class="nav navbar-nav">
+                  <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                  <li><a href="#">About</a></li>
+                  <li class="dropdown">
+                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Phone</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Set Appointment</a></li>
+                     </ul>
+                  </li>
+               </ul>
             </div>
-            <!--<div class="row">
-                <div class="col-sm-3 col-md-3">
-                    <p><strong>Page Options</strong></p>
-                <hr />
-                <button class = "btn btn-default btn-lg" name="hello">Hello There</button>
-                </div>
-            </div>-->
- 
-        </div>
-        <script>
-            $('[name=hello]').on('click', function(event){
-                event.preventDefault();
-                console.log('we can use jQuery.');
-            });
+         </nav>
+         <!--carousel of quotes-->
+         <div id="quoteCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#quoteCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#quoteCarousel" data-slide-to="1"> </li>
+                  <li data-target="#quoteCarousel" data-slide-to="2"> </li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="item active">
+                  <div class="slide1"></div>
+                     <div class="carousel-caption">
+                        <h1>Text of quote1</h1>
+                        <p>~Author and book/publication info</p>
+                     </div>
+               </div>
+               <div class="item">
+                  <div class="slide2"></div>
+                     <div class="carousel-caption">
+                        <h1>Text of quote2</h1>
+                        <p>~Author and book/publication info</p>
+                     </div>
+               </div>
+               <div class="item">
+                  <div class="slide3"></div>
+                     <div class="carousel-caption">
+                        <h1>Text of quote3</h1>
+                        <p>~Author and book/publication info</p>
+                     </div>
+               </div>
+            </div>
+            <a class="left carousel-control" href="#quoteCarousel" data-slide="prev">
+               <span class="glyphicon glyphicon-chevron-left"></span>
+            </a>
+            <a class="right carousel-control" href="#quoteCarousel" data-slide="next">
+               <span class="glyphicon glyphicon-chevron-right"></span>
+            </a>
+         </div>
+      </div>
+      <script>
+         $('[name=hello]').on('click', function(event){
+            event.preventDefault();
+            console.log('we can use jQuery.');
+         });
             
-        </script>
+      </script>
    </body>
 </html>
