@@ -46,92 +46,17 @@
    </head>
    <body>
         <!--site header-->
-      <td>
-         <table>
-               <tbody>
-                  <tr>
-                        <td style="line-height: 12pt; height: 10px;">
-                            <span class="pagetop">
-                                <b>Chat Room</b>
-                            </span>
-                        </td>
-                        <td style="text-align:right; padding-right:4px;">
-                           <span class="pagetop">
-                                    <b>ROOMS</b>
-                           </span>
-                        </td>
-                  </tr>
-               </tbody>
-         </table>
-      </td>
-        <!--HOME PAGE-->
-         <div class="grid-container">
-            <!--Header-->
-            <div class="item1">
-               <p id="welcome_message">Room Name || Welcome Message</p>
+        <div class="container">
+            <div class="page-header">
+                <h1>Final Proj</h1>
             </div>
-            <div class="item2">
-               <!--Create Chat-->
-               <div class="centered-form__form">
-                  <!--enter username-->
-                  <form id="new_user">
-                     <div class="form-field">
-                        <h3>Please Enter username to see chats</h3>
-                        <label>Username</label>
-                        <input type="text" name="name"/>
-                     </div>
-                     <div class="form-field">
-                        <button>Enter</button>
-                     </div>
-                  </form>
-                  <form id="new_room" style="display: none">
-                     <div class="form-field">
-                        <h3 id="menu_msg">Create a New Chat</h3>
-                     </div>
-                     <!--display after username-->
-                     <div class="form2" id="room" >
-                        <label>Room Name</label>
-                        <input type="text" name="room"/>
-                     </div>
-                     <p class="form2">
-                        <input type="radio" name="stat" value="Private" id="priv"/>
-                        <label for="priv">Private</label>
-                     </p>
-                     <p class="form2">
-                        <input type="radio" name="stat" value="Public" id="pub"/>
-                        <label for="pub">Public</label>
-                     </p>
-                     <div class="form2">
-                        <button id="button">Join</button>
-                     </div>
-                  </form>
-               </div>
-               <!--In a chat: Current Users-->
-               <div class="user_panel" name="chat__sidebar" style="display:none">
-                  <h3>Current Users</h3>
-                  <div id="users"></div>
-               </div>
+            <div class="row" style="background-color: #993300;">
+                <div class="col-sm-3 col-md-3">
+                    <p><strong>Page Options</strong></p>
+                <hr />
+                <button class = "btn btn-default btn-lg">Hello There</button>
+                </div>
             </div>
-            <div class="item3">
-               <p>Chat Log || Avail Chats</p>
-               <!--In a Chat: chat log-->
-               <div id="chatlog" class="mess" style="text-align: left"></div>
-               <div>
-                  <b id="chats" style="text-align: center"></b>
-               </div>
-            </div>  
-            <div class="item4">
-               <p>Send Form || Msg: Click on chat name to join</p>
-               <div class="chat_window" name="chat__main" style="display:none">
-                  <div class="chat_footer">
-                     <form id="chat-input">
-                        <input name="message" type="text" placeholder="Enter message here." autocomplete="off"/>
-                        <button>Send</button>
-                     </form>
-                  </div>
-               </div>
-            </div>
-        </div>
       
       <!-- adds jquery FIRST-->
       <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -139,7 +64,7 @@
       <script src="/socket.io/socket.io.js"></script>
       <script>
             //initiating resquest to server to make connection to server client side
-            var socket = io.connect('http://ec2-18-218-79-182.us-east-2.compute.amazonaws.com:3456/chat');
+            var socket = io.connect('https://kaitlinclark-xx3.github.io/chat');
             //////////////////////////////////////
             /////CLIENT CONNECTED TO NAMESPACE////
             /////////////////////////////////////
