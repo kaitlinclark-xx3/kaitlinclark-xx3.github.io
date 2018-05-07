@@ -100,7 +100,10 @@
             </div>
          </nav>
        </header>
-      <main class="main">
+       
+      <!--site header-->
+      <div class="container">
+         
          <!--PAGE HEADER-->
          <div class="page-header">
             <h1>Final Project</h1>
@@ -114,7 +117,7 @@
                   <li data-target="#quoteCarousel" data-slide-to="3"> </li>
             </ol>
             <div class="carousel-inner">
-               <div class="carousel-item active">
+               <div class="item active">
                   <div class="slide1"></div>
                      <div class="carousel-caption">
                         <!--Quote-->
@@ -131,7 +134,7 @@
                         Toronto, Ontario: Sister Vision Press.</p>
                      </div>
                </div>
-               <div class="carousel-item">
+               <div class="item">
                   <div class="slide2"></div>
                      <div class="carousel-caption">
                         <!--Quote-->
@@ -146,8 +149,8 @@
                         Theory & Research in Social Education, 44(2), 184-211.</p>
                      </div>
                </div>
-               <div class="carousel-item">
-                  <div class="slide3">
+               <div class="item">
+                  <div class="slide3"></div>
                      <div class="carousel-caption">
                         <!--Quote-->
                         <h1>“However, there is ample evidence to indicate that
@@ -162,7 +165,7 @@
                         International Journal of Critical Psychology, 15, 1-11.</p>
                      </div>
                </div>
-               <div class="carousel-item">
+               <div class="item">
                   <div class="slide4"></div>
                      <div class="carousel-caption">
                         <!--Quote-->
@@ -175,6 +178,7 @@
                         in the academy. Anthropology and Education Quarterly, 2.1(1), 3-32.</p>
                      </div>
                </div>
+            </div>
             <a class="left carousel-control" href="#quoteCarousel" data-slide="prev">
                <span class="glyphicon glyphicon-chevron-left"></span>
             </a>
@@ -182,11 +186,17 @@
                <span class="glyphicon glyphicon-chevron-right"></span>
             </a>
          </div>
-      </main>
-   
+      </div>
       <!--FOOTER-->
       <nav class="navbar fixed-bottom navbar-default">
          <p>Site created by Kaitlin A Clark</p>
       </nav>
+      <script>
+         $('[name=hello]').on('click', function(event){
+            event.preventDefault();
+            console.log('we can use jQuery.');
+         });
+            
+      </script>
    </body>
 </html>
